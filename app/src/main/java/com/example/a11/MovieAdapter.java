@@ -14,22 +14,22 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     ArrayList<Movie> items = new ArrayList<>();
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView movieNm;
-        TextView audiAcc;
-        TextView rank;
+        TextView textView;
+        TextView textView2;
+        TextView textView3;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            movieNm = itemView.findViewById(R.id.tvMovieNm);
-            audiAcc = itemView.findViewById(R.id.tvAudiAcc);
-            rank = itemView.findViewById(R.id.tvRank);
+            textView = itemView.findViewById(R.id.textView);
+            textView2 = itemView.findViewById(R.id.textView2);
+            textView3 = itemView.findViewById(R.id.textView3);
         }
 
         public void setItem(Movie item) {
-            movieNm.setText(item.movieNm);
-            audiAcc.setText(item.audiAcc);
-            rank.setText(item.rank);
+            textView.setText(item.movieNm);
+            textView2.setText(item.audiCnt + " 명");
+            textView3.setText(item.rank +" 위");
         }
     }
 

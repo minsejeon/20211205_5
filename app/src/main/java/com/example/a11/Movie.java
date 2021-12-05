@@ -97,12 +97,12 @@ public class Movie {
         this.salesAcc = salesAcc;
     }
 
-    public String getAuidCnt() {
-        return auidCnt;
+    public String getAudiCnt() {
+        return audiCnt;
     }
 
-    public void setAuidCnt(String auidCnt) {
-        this.auidCnt = auidCnt;
+    public void setAudiCnt(String audiCnt) {
+        this.audiCnt = audiCnt;
     }
 
     public String getAudiInten() {
@@ -145,7 +145,7 @@ public class Movie {
         this.showCnt = showCnt;
     }
 
-    public Movie(String rnum, String rank, String rankInten, String rankOldAndNew, String movieCd, String movieNm, String openDt, String salesAmt, String salesShare, String salesInten, String salesChange, String salesAcc, String auidCnt, String audiInten, String audiChange, String audiAcc, String scrnCnt, String showCnt) {
+    public Movie(String rnum, String rank, String rankInten, String rankOldAndNew, String movieCd, String movieNm, String openDt, String salesAmt, String salesShare, String salesInten, String salesChange, String salesAcc, String audiCnt, String audiInten, String audiChange, String audiAcc, String scrnCnt, String showCnt) {
         this.rnum = rnum;
         this.rank = rank;
         this.rankInten = rankInten;
@@ -158,7 +158,7 @@ public class Movie {
         this.salesInten = salesInten;
         this.salesChange = salesChange;
         this.salesAcc = salesAcc;
-        this.auidCnt = auidCnt;
+        this.audiCnt = audiCnt;
         this.audiInten = audiInten;
         this.audiChange = audiChange;
         this.audiAcc = audiAcc;
@@ -178,7 +178,7 @@ public class Movie {
     String salesInten;
     String salesChange;
     String salesAcc;
-    String auidCnt;
+    String audiCnt;
     String audiInten;
     String audiChange;
     String audiAcc;

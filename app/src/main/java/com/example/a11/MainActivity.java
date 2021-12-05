@@ -22,26 +22,18 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     EditText editText;
-    TextView textView;
-    RecyclerView recyclerView;
-    MovieAdapter adapter;
 
     static RequestQueue requestQueue;
+
+    RecyclerView recyclerView;
+    MovieAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView = findViewById(R.id.recyclerView);
-
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(layoutManager);
-        adapter = new MovieAdapter();
-        recyclerView.setAdapter(adapter);
-
         editText = findViewById(R.id.xeditText);
-        textView = findViewById(R.id.xtextView);
 
         Button button = findViewById(R.id.xbutton);
         button.setOnClickListener(v -> makeRequest());
@@ -49,6 +41,13 @@ public class MainActivity extends AppCompatActivity {
         if (requestQueue == null) {
             requestQueue = Volley.newRequestQueue(getApplicationContext());
         }
+
+        recyclerView = findViewById(R.id.recyclerView);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        recyclerView.setLayoutManager(layoutManager);
+
+        adapter = new MovieAdapter();
+        recyclerView.setAdapter(adapter);
     }
 
     public void makeRequest() {
@@ -74,6 +73,10 @@ public class MainActivity extends AppCompatActivity {
         println("요청 보냄");
     }
 
+    public void println(String data) {
+        Log.d("MainActivity", data);
+    }
+
     public void processResponse(String response) {
         Gson gson = new Gson();
         MovieList movieList = gson.fromJson(response, MovieList.class);
@@ -83,9 +86,5 @@ public class MainActivity extends AppCompatActivity {
             adapter.addItem(item);
             adapter.notifyDataSetChanged();
         }
-    }
-
-    public void println(String data) {
-        textView.append(data + "\n");
     }
 }
